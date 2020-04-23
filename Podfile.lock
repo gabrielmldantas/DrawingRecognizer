@@ -1,0 +1,20 @@
+PODS:
+  - Alamofire (5.1.0)
+  - OpenCV (4.1.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.1)
+  - OpenCV
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - OpenCV
+
+SPEC CHECKSUMS:
+  Alamofire: 9d5c5f602928e512395b30950c5984eca840093c
+  OpenCV: 52cd4d72ff29e2be83421477aec5447320b7fb19
+
+PODFILE CHECKSUM: ee7ce0f03faed5926769aa15e3193661f9cde885
+
+COCOAPODS: 1.9.1
