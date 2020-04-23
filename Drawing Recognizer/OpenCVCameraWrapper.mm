@@ -93,11 +93,17 @@
 }
 
 - (UIImage *)getCurrentImage {
-    cv::Mat grayscale_image(_currentImage, _currentBoundingBox);
-    cv::resize(grayscale_image, grayscale_image, cv::Size(28, 28));
-    cv::cvtColor(grayscale_image, grayscale_image, cv::COLOR_BGRA2GRAY);
-    cv::adaptiveThreshold(grayscale_image, grayscale_image, 255, cv::ADAPTIVE_THRESH_GAUSSIAN_C, cv::THRESH_BINARY_INV, 7, 11);
-    return MatToUIImage(grayscale_image);
+    cv::Mat rgbImage;
+    cv::cvtColor(_currentImage, rgbImage, cv::COLOR_BGRA2RGBA);
+    return MatToUIImage(rgbImage);
+}
+
+- (UIImage *)getCurrentROI {
+    cv::Mat roi(_currentImage.clone(), _currentBoundingBox);
+    cv::resize(roi, roi, cv::Size(28, 28));
+    cv::cvtColor(roi, roi, cv::COLOR_BGRA2GRAY);
+    cv::adaptiveThreshold(roi, roi, 255, cv::ADAPTIVE_THRESH_GAUSSIAN_C, cv::THRESH_BINARY_INV, 7, 11);
+    return MatToUIImage(roi);
 }
 
 @end

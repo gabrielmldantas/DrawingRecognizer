@@ -13,11 +13,12 @@
 
 @interface OpenCVCameraWrapper : NSObject
 
-- (void)setupCameraFeed:(UIImageView*)view;
+- (void)setupCameraFeed:(UIImageView *)view;
 - (void)startCamera;
 - (void)stopCamera;
 - (CGRect)getCurrentBoundingBox;
 - (UIImage *)getCurrentImage;
+- (UIImage *)getCurrentROI;
 
 @end
 
