@@ -33,7 +33,7 @@
     _camera.defaultAVCaptureDevicePosition = AVCaptureDevicePositionBack;
     _camera.defaultAVCaptureSessionPreset = AVCaptureSessionPresetMedium;
     _camera.defaultAVCaptureVideoOrientation = AVCaptureVideoOrientationPortrait;
-    _camera.defaultFPS = 30;
+    _camera.defaultFPS = 60;
     _camera.delegate = self;
 }
 
